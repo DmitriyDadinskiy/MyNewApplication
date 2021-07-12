@@ -1,18 +1,304 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.motion.widget.MotionLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    app:layoutDescription="@xml/activity_main_scene"
     tools:context=".MainActivity">
 
-    <TextView
+
+    <Button
+        android:id="@+id/button_percent"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hello World!"
+        android:insetTop="0dp"
+        android:insetBottom="0dp"
+        android:text="%"
+        android:textAlignment="center"
+        android:textAppearance="@style/TextAppearance.AppCompat.Small"
+        android:textSize="34sp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:strokeColor="#352E2E"
+        app:strokeWidth="1dp" />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <Button
+        android:id="@+id/button_0"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:insetTop="0dp"
+        android:insetBottom="0dp"
+        android:text="0"
+        android:textAlignment="center"
+        android:textAppearance="@style/TextAppearance.AppCompat.Small"
+        android:textSize="34sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/button_percent"
+        app:strokeColor="#352E2E"
+        app:strokeWidth="1dp" />
+
+    <Button
+        android:id="@+id/button_comma"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:insetTop="0dp"
+        android:insetBottom="0dp"
+        android:text=","
+        android:textAlignment="inherit"
+        android:textAppearance="@style/TextAppearance.AppCompat.Small"
+        android:textSize="34sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/button_0"
+        app:strokeColor="#352E2E"
+        app:strokeWidth="1dp" />
+
+    <Button
+        android:id="@+id/button_equally"
+        android:layout_width="wrap_content"
+        android:layout_height="107dp"
+        android:insetTop="0dp"
+        android:insetBottom="0dp"
+        android:text="="
+        android:textAlignment="inherit"
+        android:textAppearance="@style/TextAppearance.AppCompat.Small"
+        android:textSize="34sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/button_comma"
+        app:strokeColor="#352E2E"
+        app:strokeWidth="1dp" />
+
+    <Button
+        android:id="@+id/button_7"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:insetTop="0dp"
+        android:insetBottom="0dp"
+        android:text="7"
+        android:textAlignment="inherit"
+        android:textAppearance="@style/TextAppearance.AppCompat.Small"
+        android:textSize="34sp"
+        app:layout_constraintBottom_toTopOf="@+id/button_percent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:strokeColor="#352E2E"
+        app:strokeWidth="1dp" />
+
+    <Button
+        android:id="@+id/button_8"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:insetTop="0dp"
+        android:insetBottom="0dp"
+        android:text="8"
+        android:textAlignment="inherit"
+        android:textAppearance="@style/TextAppearance.AppCompat.Small"
+        android:textSize="34sp"
+        app:layout_constraintBottom_toTopOf="@+id/button_0"
+        app:layout_constraintStart_toEndOf="@+id/button_7"
+        app:strokeColor="#352E2E"
+        app:strokeWidth="1dp" />
+
+    <Button
+        android:id="@+id/button_9"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:insetTop="0dp"
+        android:insetBottom="0dp"
+        android:text="9"
+        android:textAlignment="inherit"
+        android:textAppearance="@style/TextAppearance.AppCompat.Small"
+        android:textSize="34sp"
+        app:layout_constraintBottom_toTopOf="@+id/button_comma"
+        app:layout_constraintStart_toEndOf="@+id/button_8"
+        app:strokeColor="#352E2E"
+        app:strokeWidth="1dp" />
+
+    <Button
+        android:id="@+id/button_plus"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:insetTop="0dp"
+        android:insetBottom="0dp"
+        android:text="+"
+        android:textAlignment="inherit"
+        android:textAppearance="@style/TextAppearance.AppCompat.Small"
+        android:textSize="34sp"
+        app:layout_constraintBottom_toTopOf="@+id/button_equally"
+        app:layout_constraintStart_toEndOf="@+id/button_9"
+        app:strokeColor="#352E2E"
+        app:strokeWidth="1dp" />
+
+    <Button
+        android:id="@+id/button_4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:insetTop="0dp"
+        android:insetBottom="0dp"
+        android:text="4"
+        android:textAlignment="inherit"
+        android:textAppearance="@style/TextAppearance.AppCompat.Small"
+        android:textSize="34sp"
+        app:layout_constraintBottom_toTopOf="@+id/button_7"
+        app:layout_constraintStart_toStartOf="parent"
+        app:strokeColor="#352E2E"
+        app:strokeWidth="1dp" />
+
+    <Button
+        android:id="@+id/button_5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:insetTop="0dp"
+        android:insetBottom="0dp"
+        android:text="5"
+        android:textAlignment="inherit"
+        android:textAppearance="@style/TextAppearance.AppCompat.Small"
+        android:textSize="34sp"
+        app:layout_constraintBottom_toTopOf="@+id/button_8"
+        app:layout_constraintStart_toEndOf="@+id/button_4"
+        app:strokeColor="#352E2E"
+        app:strokeWidth="1dp" />
+
+    <Button
+        android:id="@+id/button_6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:insetTop="0dp"
+        android:insetBottom="0dp"
+        android:text="6"
+        android:textAlignment="inherit"
+        android:textAppearance="@style/TextAppearance.AppCompat.Small"
+        android:textSize="34sp"
+        app:layout_constraintBottom_toTopOf="@+id/button_9"
+        app:layout_constraintStart_toEndOf="@+id/button_5"
+        app:strokeColor="#352E2E"
+        app:strokeWidth="1dp" />
+
+    <Button
+        android:id="@+id/button_1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:insetTop="0dp"
+        android:insetBottom="0dp"
+        android:text="1"
+        android:textAlignment="inherit"
+        android:textAppearance="@style/TextAppearance.AppCompat.Small"
+        android:textSize="34sp"
+        app:layout_constraintBottom_toTopOf="@+id/button_4"
+        app:layout_constraintStart_toStartOf="parent"
+        app:strokeColor="#352E2E"
+        app:strokeWidth="1dp" />
+
+    <Button
+        android:id="@+id/button_2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:insetTop="0dp"
+        android:insetBottom="0dp"
+        android:text="2"
+        android:textAlignment="inherit"
+        android:textAppearance="@style/TextAppearance.AppCompat.Small"
+        android:textSize="34sp"
+        app:layout_constraintBottom_toTopOf="@+id/button_5"
+        app:layout_constraintStart_toEndOf="@+id/button_1"
+        app:strokeColor="#352E2E"
+        app:strokeWidth="1dp" />
+
+    <Button
+        android:id="@+id/button_3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:insetTop="0dp"
+        android:insetBottom="0dp"
+        android:text="3"
+        android:textAlignment="inherit"
+        android:textAppearance="@style/TextAppearance.AppCompat.Small"
+        android:textSize="34sp"
+        app:layout_constraintBottom_toTopOf="@+id/button_6"
+        app:layout_constraintStart_toEndOf="@+id/button_2"
+        app:strokeColor="#352E2E"
+        app:strokeWidth="1dp" />
+
+    <Button
+        android:id="@+id/button_minus"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:insetTop="0dp"
+        android:insetBottom="0dp"
+        android:text="-"
+        android:textAppearance="@style/TextAppearance.AppCompat.Small"
+        android:textSize="34sp"
+        app:layout_constraintBottom_toTopOf="@+id/button_plus"
+        app:layout_constraintStart_toEndOf="@+id/button_3"
+        app:strokeColor="#352E2E"
+        app:strokeWidth="1dp" />
+
+    <Button
+        android:id="@+id/button_clear"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:insetTop="0dp"
+        android:insetBottom="0dp"
+        android:text="С"
+        android:textAlignment="inherit"
+        android:textAppearance="@style/TextAppearance.AppCompat.Small"
+        android:textSize="34sp"
+        app:layout_constraintBottom_toTopOf="@+id/button_1"
+        app:layout_constraintStart_toStartOf="parent"
+        app:strokeColor="#352E2E"
+        app:strokeWidth="1dp" />
+
+    <Button
+        android:id="@+id/button_multiply"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:insetTop="0dp"
+        android:insetBottom="0dp"
+        android:text="*"
+        android:textAlignment="inherit"
+        android:textAppearance="@style/TextAppearance.AppCompat.Small"
+        android:textSize="34sp"
+        app:layout_constraintBottom_toTopOf="@+id/button_2"
+        app:layout_constraintStart_toEndOf="@+id/button_clear"
+        app:strokeColor="#352E2E"
+        app:strokeWidth="1dp" />
+
+    <Button
+        android:id="@+id/button_divide"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:insetTop="0dp"
+        android:insetBottom="0dp"
+        android:text="/"
+        android:textAlignment="inherit"
+        android:textAppearance="@style/TextAppearance.AppCompat.Small"
+        android:textSize="34sp"
+        app:layout_constraintBottom_toTopOf="@+id/button_3"
+        app:layout_constraintStart_toEndOf="@+id/button_multiply"
+        app:strokeColor="#352E2E"
+        app:strokeWidth="1dp" />
+
+    <Button
+        android:id="@+id/button_delete"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:insetTop="0dp"
+        android:insetBottom="0dp"
+        android:textAppearance="@style/TextAppearance.AppCompat.Small"
+        android:textSize="34sp"
+        app:icon="@android:drawable/ic_input_delete"
+        app:iconGravity="textStart"
+        app:iconPadding="8dp"
+        app:layout_constraintBottom_toTopOf="@+id/button_minus"
+        app:layout_constraintStart_toEndOf="@+id/button_divide"
+        app:strokeColor="#352E2E"
+        app:strokeWidth="1dp" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline2"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        app:layout_constraintGuide_begin="0dp" />
+
+
+</androidx.constraintlayout.motion.widget.MotionLayout>

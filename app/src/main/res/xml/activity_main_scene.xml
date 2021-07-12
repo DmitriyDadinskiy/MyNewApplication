@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="utf-8"?>
+<MotionScene 
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:motion="http://schemas.android.com/apk/res-auto">
+
+    <Transition
+        motion:constraintSetEnd="@+id/end"
+        motion:constraintSetStart="@id/start"
+        motion:duration="1000">
+       <KeyFrameSet>
+       </KeyFrameSet>
+    </Transition>
+
+    <ConstraintSet android:id="@+id/start">
+        <Constraint
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            motion:layout_constraintBottom_toTopOf="@+id/button_1"
+            motion:layout_constraintStart_toStartOf="parent"
+            android:id="@+id/button_clear"
+            motion:layout_constraintEnd_toStartOf="@+id/button_multiply" />
+        <Constraint
+            android:layout_height="wrap_content"
+            motion:layout_constraintStart_toEndOf="@+id/button_divide"
+            motion:layout_constraintBottom_toTopOf="@+id/button_minus"
+            motion:layout_constraintEnd_toEndOf="parent"
+            android:layout_width="wrap_content"
+            android:id="@+id/button_delete" />
+        <Constraint
+            android:layout_height="wrap_content"
+            motion:layout_constraintStart_toEndOf="@+id/button_3"
+            motion:layout_constraintBottom_toTopOf="@+id/button_plus"
+            motion:layout_constraintEnd_toEndOf="parent"
+            android:layout_width="wrap_content"
+            android:id="@+id/button_minus" />
+        <Constraint
+            android:layout_height="wrap_content"
+            motion:layout_constraintStart_toEndOf="@+id/button_6"
+            motion:layout_constraintBottom_toTopOf="@+id/button_equally"
+            android:layout_width="wrap_content"
+            android:id="@+id/button_plus"
+            motion:layout_constraintEnd_toEndOf="parent" />
+        <Constraint
+            android:layout_height="107dp"
+            motion:layout_constraintStart_toEndOf="@+id/button_comma"
+            motion:layout_constraintBottom_toBottomOf="parent"
+            motion:layout_constraintEnd_toEndOf="parent"
+            android:layout_width="wrap_content"
+            android:id="@+id/button_equally" />
+        <Constraint
+            android:layout_height="wrap_content"
+            motion:layout_constraintEnd_toStartOf="@+id/button_delete"
+            motion:layout_constraintStart_toEndOf="@+id/button_multiply"
+            motion:layout_constraintBottom_toTopOf="@+id/button_3"
+            android:layout_width="wrap_content"
+            android:id="@+id/button_divide" />
+        <Constraint
+            android:layout_height="wrap_content"
+            motion:layout_constraintEnd_toStartOf="@+id/button_minus"
+            motion:layout_constraintStart_toEndOf="@+id/button_2"
+            motion:layout_constraintBottom_toTopOf="@+id/button_6"
+            android:layout_width="wrap_content"
+            android:id="@+id/button_3" />
+        <Constraint
+            android:layout_height="wrap_content"
+            motion:layout_constraintEnd_toStartOf="@+id/button_plus"
+            motion:layout_constraintStart_toEndOf="@+id/button_5"
+            motion:layout_constraintBottom_toTopOf="@+id/button_9"
+            android:layout_width="wrap_content"
+            android:id="@+id/button_6" />
+        <Constraint
+            android:layout_height="wrap_content"
+            motion:layout_constraintBottom_toTopOf="@+id/button_comma"
+            android:layout_width="wrap_content"
+            motion:layout_constraintEnd_toStartOf="@+id/button_equally"
+            motion:layout_constraintStart_toEndOf="@+id/button_8"
+            android:id="@+id/button_9" />
+        <Constraint
+            android:layout_height="wrap_content"
+            motion:layout_constraintStart_toEndOf="@+id/button_0"
+            motion:layout_constraintBottom_toBottomOf="parent"
+            android:layout_width="wrap_content"
+            android:id="@+id/button_comma"
+            motion:layout_constraintEnd_toStartOf="@+id/button_equally" />
+        <Constraint
+            android:layout_height="wrap_content"
+            motion:layout_constraintBottom_toBottomOf="parent"
+            android:layout_width="wrap_content"
+            motion:layout_constraintEnd_toStartOf="@+id/button_comma"
+            motion:layout_constraintStart_toEndOf="@+id/button_percent"
+            android:id="@+id/button_0" />
+        <Constraint
+            android:layout_height="wrap_content"
+            motion:layout_constraintEnd_toStartOf="@+id/button_9"
+            motion:layout_constraintStart_toEndOf="@+id/button_7"
+            motion:layout_constraintBottom_toTopOf="@+id/button_0"
+            android:layout_width="wrap_content"
+            android:id="@+id/button_8" />
+        <Constraint
+            android:layout_height="wrap_content"
+            motion:layout_constraintBottom_toTopOf="@+id/button_8"
+            android:layout_width="wrap_content"
+            motion:layout_constraintEnd_toStartOf="@+id/button_6"
+            motion:layout_constraintStart_toEndOf="@+id/button_4"
+            android:id="@+id/button_5" />
+        <Constraint
+            android:layout_height="wrap_content"
+            motion:layout_constraintEnd_toStartOf="@+id/button_divide"
+            motion:layout_constraintStart_toEndOf="@+id/button_clear"
+            motion:layout_constraintBottom_toTopOf="@+id/button_2"
+            android:layout_width="wrap_content"
+            android:id="@+id/button_multiply" />
+        <Constraint
+            android:layout_height="wrap_content"
+            motion:layout_constraintEnd_toStartOf="@+id/button_3"
+            motion:layout_constraintStart_toEndOf="@+id/button_1"
+            motion:layout_constraintBottom_toTopOf="@+id/button_5"
+            android:layout_width="wrap_content"
+            android:id="@+id/button_2" />
+        <Constraint
+            android:layout_height="wrap_content"
+            motion:layout_constraintEnd_toStartOf="@+id/button_2"
+            motion:layout_constraintStart_toStartOf="parent"
+            motion:layout_constraintBottom_toTopOf="@+id/button_4"
+            android:layout_width="wrap_content"
+            android:id="@+id/button_1" />
+        <Constraint
+            android:layout_height="wrap_content"
+            motion:layout_constraintEnd_toStartOf="@+id/button_5"
+            motion:layout_constraintStart_toStartOf="parent"
+            motion:layout_constraintBottom_toTopOf="@+id/button_7"
+            android:layout_width="wrap_content"
+            android:id="@+id/button_4" />
+        <Constraint
+            android:layout_height="wrap_content"
+            motion:layout_constraintBottom_toTopOf="@+id/button_percent"
+            android:layout_width="wrap_content"
+            motion:layout_constraintEnd_toStartOf="@+id/button_8"
+            motion:layout_constraintStart_toStartOf="parent"
+            android:id="@+id/button_7" />
+        <Constraint
+            android:layout_height="wrap_content"
+            motion:layout_constraintBottom_toBottomOf="parent"
+            android:layout_width="wrap_content"
+            motion:layout_constraintEnd_toStartOf="@+id/button_0"
+            motion:layout_constraintStart_toStartOf="parent"
+            android:id="@+id/button_percent" />
+    </ConstraintSet>
+
+    <ConstraintSet android:id="@+id/end">
+    </ConstraintSet>
+</MotionScene>

@@ -293,12 +293,16 @@
         app:strokeColor="#352E2E"
         app:strokeWidth="1dp" />
 
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guideline2"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical"
-        app:layout_constraintGuide_begin="0dp" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:hint="Поле ввода"
+        android:textSize="32dp"
+        tools:layout_editor_absoluteX="169dp"
+        tools:layout_editor_absoluteY="93dp" />
 
 
 </androidx.constraintlayout.motion.widget.MotionLayout>

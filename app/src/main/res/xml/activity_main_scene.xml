@@ -145,6 +145,16 @@
             motion:layout_constraintEnd_toStartOf="@+id/button_0"
             motion:layout_constraintStart_toStartOf="parent"
             android:id="@+id/button_percent" />
+        <Constraint
+            android:layout_height="175dp"
+            motion:layout_constraintTop_toTopOf="parent"
+            android:layout_width="341dp"
+            android:id="@+id/textView"
+            motion:layout_constraintEnd_toEndOf="parent"
+            motion:layout_constraintStart_toStartOf="parent"
+            android:layout_marginTop="32dp"
+            motion:layout_constraintBottom_toTopOf="@+id/button_multiply"
+            motion:layout_constraintVertical_bias="0.016" />
     </ConstraintSet>
 
     <ConstraintSet android:id="@+id/end">

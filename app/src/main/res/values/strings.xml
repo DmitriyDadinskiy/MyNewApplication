@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">MyNewApplication</string>
+    <string name="But_0">But_0 click listener</string>
+    <string name="But_1">But_1 click listener</string>
 </resources>

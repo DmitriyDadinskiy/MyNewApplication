@@ -1,12 +1,20 @@
 package com.example.mynewapplication;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
+
+import android.content.SharedPreferences;
+import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.RadioGroup;
 import android.widget.TextView;
 
+import com.google.android.material.radiobutton.MaterialRadioButton;
+
+import static com.example.mynewapplication.R.style.*;
 
 
 public class MainActivity extends AppCompatActivity {
@@ -15,20 +23,28 @@ public class MainActivity extends AppCompatActivity {
     private static final char sum = '+';
     private static final char minus = '-';
     private static final char multi = '*';
-    private static final char div= '/';
+    private static final char div = '/';
 
     private char user_symbol;
     private double NUM1 = Double.NaN;
     private double NUM2;
     public static final String TEXT_POLE1 = "TEXT_POLE";
 
+    private static final String NameSharedPreference = "LOGIN";
+    private static final String appTheme = "APP_THEME";
+    private static final int difTheme = 0;
+    private static final int MyCoolButton = 1;
+
+    @RequiresApi(api = Build.VERSION_CODES.Q)
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        setTheme(getTheme(Theme_MyNewApplication));
         setContentView(R.layout.activity_main);
         initView();
 
     }
+
 
     @Override
     protected void onSaveInstanceState(@NonNull Bundle outState) {
@@ -60,9 +76,53 @@ public class MainActivity extends AppCompatActivity {
         initButton8Click();
         initButton9Click();
         initButtonComClick();
-        setSymbol ();
+        setSymbol();
         otherButtons();
+        initTheme();
     }
+
+    private void initTheme() {
+        initRadioButton(findViewById(R.id.radioButton), difTheme);
+        initRadioButton(findViewById(R.id.MyCoolButton), MyCoolButton);
+        RadioGroup rg = findViewById(R.id.radioButtons);
+        ((MaterialRadioButton) rg.getChildAt(getCodeStyle(difTheme))).setChecked(true);
+    }
+
+    private void initRadioButton(View button, final int codeStyle) {
+        button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                setAppTheme(codeStyle);
+                recreate();
+            }
+        });
+    }
+
+    private int getCodeStyle(int codeStyle) {
+        SharedPreferences sharedPref = getSharedPreferences(NameSharedPreference, MODE_PRIVATE);
+        return sharedPref.getInt(appTheme, codeStyle);
+    }
+
+    private int getTheme(int codeStyle) {
+        return Style(getCodeStyle(codeStyle));
+    }
+
+    private void setAppTheme(int codeStyle) {
+        SharedPreferences sharedPref = getSharedPreferences(NameSharedPreference, MODE_PRIVATE);
+        SharedPreferences.Editor editor = sharedPref.edit();
+        editor.putInt(appTheme, codeStyle);
+        editor.apply();
+    }
+
+    private int Style(int codeStyle) {
+        switch (codeStyle) {
+            case MyCoolButton:
+                return MyCoolButtons;
+            default:
+                return Theme_MyNewApplication;
+        }
+    }
+
 
     private void initButton0Click() {
         Button button_0 = findViewById(R.id.button_0);
@@ -163,12 +223,12 @@ public class MainActivity extends AppCompatActivity {
         TextView.setText(s);
     }
 
-    private void setSymbol (){
-        Button plus = findViewById(R. id.button_plus);
-        Button bMinus = findViewById(R. id.button_minus);
-        Button multiply = findViewById(R. id.button_multiply);
-        Button divide = findViewById(R. id.button_divide);
-        Button equally = findViewById(R. id.button_equally);
+    private void setSymbol() {
+        Button plus = findViewById(R.id.button_plus);
+        Button bMinus = findViewById(R.id.button_minus);
+        Button multiply = findViewById(R.id.button_multiply);
+        Button divide = findViewById(R.id.button_divide);
+        Button equally = findViewById(R.id.button_equally);
 
         plus.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -184,7 +244,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 calculation();
-                user_symbol =minus;
+                user_symbol = minus;
                 TextView.setText((NUM1) + "-");
                 TextView.setText(null);
             }
@@ -202,7 +262,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 calculation();
-                user_symbol =div;
+                user_symbol = div;
                 TextView.setText((NUM1) + "/");
                 TextView.setText(null);
             }
@@ -221,29 +281,28 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void calculation() {
-        if(!Double.isNaN(NUM1)) {
+        if (!Double.isNaN(NUM1)) {
             NUM2 = Double.parseDouble(TextView.getText().toString());
             TextView.setText(null);
-            if(user_symbol == sum)
+            if (user_symbol == sum)
                 NUM1 = this.NUM1 + NUM2;
-            else if(user_symbol == minus)
+            else if (user_symbol == minus)
                 NUM1 = this.NUM1 - NUM2;
-            else if(user_symbol == multi)
+            else if (user_symbol == multi)
                 NUM1 = this.NUM1 * NUM2;
-            else if(user_symbol == div)
+            else if (user_symbol == div)
                 NUM1 = this.NUM1 / NUM2;
-        }
-        else {
+        } else {
             try {
                 NUM1 = Double.parseDouble(TextView.getText().toString());
+            } catch (Exception e) {
             }
-            catch (Exception e){}
         }
     }
 
-    private void otherButtons(){
+    private void otherButtons() {
         Button clear = findViewById(R.id.button_clear);
-        Button percent = findViewById(R. id.button_percent);
+        Button percent = findViewById(R.id.button_percent);
         clear.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

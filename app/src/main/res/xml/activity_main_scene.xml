@@ -155,6 +155,41 @@
             android:layout_marginTop="32dp"
             motion:layout_constraintBottom_toTopOf="@+id/button_multiply"
             motion:layout_constraintVertical_bias="0.016" />
+        <Constraint
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:id="@+id/radioButton"
+            motion:layout_constraintEnd_toEndOf="parent"
+            motion:layout_constraintStart_toEndOf="@+id/MyCoolButton"
+            android:layout_marginEnd="16dp"
+            android:layout_marginRight="16dp"
+            motion:layout_constraintTop_toBottomOf="@+id/textView"
+            android:layout_marginTop="22dp"
+            motion:layout_constraintHorizontal_bias="0.367" />
+        <Constraint
+            motion:layout_editor_absoluteY="231dp"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            motion:layout_constraintStart_toStartOf="parent"
+            android:id="@+id/radioButton2"
+            motion:layout_constraintEnd_toStartOf="@+id/radioButton" />
+        <Constraint
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            motion:layout_constraintStart_toStartOf="parent"
+            android:id="@+id/MyCoolButton"
+            motion:layout_constraintEnd_toStartOf="@+id/radioButton"
+            motion:layout_constraintTop_toBottomOf="@+id/textView"
+            android:layout_marginTop="22dp"
+            motion:layout_constraintHorizontal_bias="0.275" />
+        <Constraint
+            android:id="@+id/radioButtons"
+            android:layout_width="343dp"
+            android:layout_height="103dp"
+            motion:layout_constraintStart_toStartOf="parent"
+            motion:layout_constraintEnd_toEndOf="parent"
+            motion:layout_editor_absoluteX="28dp"
+            motion:layout_constraintTop_toBottomOf="@+id/textView" />
     </ConstraintSet>
 
     <ConstraintSet android:id="@+id/end">

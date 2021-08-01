@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="MyCoolButtons">
+        <item name="android:textSize">@dimen/Text_size</item>
+        <item name="android:textColor">@color/MyColors</item>
+        <item name="android:fontFamily">cursive</item>
+        <item name="android:textStyle">bold</item>
+        <item name= "android:backgroundTint">@color/turquoise</item>
+
+    </style>
+</resources>

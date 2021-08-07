@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    app:layoutDescription="@xml/activity_main_scene"
+    app:layoutDescription="@xml/activity_main_scene_land"
     tools:context=".MainActivity">
 
 
@@ -17,10 +17,10 @@
         android:text="%"
         android:textAlignment="center"
         android:textSize="@dimen/Text_size"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
         app:strokeColor="@color/MyColors"
-        app:strokeWidth="@dimen/MyWidth" />
+        app:strokeWidth="@dimen/MyWidth"
+        tools:layout_editor_absoluteX="1dp"
+        tools:layout_editor_absoluteY="276dp" />
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/button_0"
@@ -87,10 +87,10 @@
         android:text="8"
         android:textAlignment="inherit"
         android:textSize="@dimen/Text_size"
-        app:layout_constraintBottom_toTopOf="@+id/button_0"
-        app:layout_constraintStart_toEndOf="@+id/button_7"
         app:strokeColor="@color/MyColors"
-        app:strokeWidth="@dimen/MyWidth" />
+        app:strokeWidth="@dimen/MyWidth"
+        tools:layout_editor_absoluteX="88dp"
+        tools:layout_editor_absoluteY="222dp" />
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/button_9"
@@ -102,10 +102,10 @@
         android:textAlignment="inherit"
         android:textAppearance="@style/TextAppearance.AppCompat.Small"
         android:textSize="@dimen/Text_size"
-        app:layout_constraintBottom_toTopOf="@+id/button_comma"
-        app:layout_constraintStart_toEndOf="@+id/button_8"
         app:strokeColor="@color/MyColors"
-        app:strokeWidth="@dimen/MyWidth" />
+        app:strokeWidth="@dimen/MyWidth"
+        tools:layout_editor_absoluteX="176dp"
+        tools:layout_editor_absoluteY="222dp" />
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/button_plus"
@@ -181,6 +181,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:strokeColor="@color/MyColors"
         app:strokeWidth="@dimen/MyWidth" />
+
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/button_2"
@@ -271,6 +272,7 @@
         app:strokeColor="@color/MyColors"
         app:strokeWidth="@dimen/MyWidth" />
 
+
     <com.google.android.material.button.MaterialButton
         android:id="@+id/button_delete"
         android:layout_width="wrap_content"
@@ -286,7 +288,6 @@
         app:layout_constraintStart_toEndOf="@+id/button_divide"
         app:strokeColor="@color/MyColors"
         app:strokeWidth="@dimen/MyWidth" />
-
 
     <TextView
         android:id="@+id/textView"
@@ -306,5 +307,6 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
 
 </androidx.constraintlayout.motion.widget.MotionLayout>

@@ -4,17 +4,13 @@ import androidx.annotation.NonNull;
 import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.content.SharedPreferences;
+import android.content.Intent;
+import android.content.res.Resources;
 import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
-import android.widget.RadioGroup;
 import android.widget.TextView;
-
-import com.google.android.material.radiobutton.MaterialRadioButton;
-
-import static com.example.mynewapplication.R.style.*;
 
 
 public class MainActivity extends AppCompatActivity {
@@ -30,20 +26,27 @@ public class MainActivity extends AppCompatActivity {
     private double NUM2;
     public static final String TEXT_POLE1 = "TEXT_POLE";
 
-    private static final String NameSharedPreference = "LOGIN";
-    private static final String appTheme = "APP_THEME";
-    private static final int difTheme = 0;
-    private static final int MyCoolButton = 1;
 
     @RequiresApi(api = Build.VERSION_CODES.Q)
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+   //     setTheme(setAppTheme(R.style.Theme_MyNewApplication));
         super.onCreate(savedInstanceState);
-        setTheme(getTheme(Theme_MyNewApplication));
         setContentView(R.layout.activity_main);
+
         initView();
 
     }
+
+//    public void setTheme(final int codeStyle) {
+//
+//        MainActivity.this.setAppTheme(codeStyle);
+//    }
+//    private Resources.Theme setAppTheme(int codeStyle){
+//        String appTheme = getIntent().getExtras().getString("APP_THEME");
+//        getIntent().putExtra(appTheme, codeStyle);
+//        return null;
+//    }
 
 
     @Override
@@ -78,51 +81,20 @@ public class MainActivity extends AppCompatActivity {
         initButtonComClick();
         setSymbol();
         otherButtons();
-        initTheme();
+        initButtonTheme();
     }
 
-    private void initTheme() {
-        initRadioButton(findViewById(R.id.radioButton), difTheme);
-        initRadioButton(findViewById(R.id.MyCoolButton), MyCoolButton);
-        RadioGroup rg = findViewById(R.id.radioButtons);
-        ((MaterialRadioButton) rg.getChildAt(getCodeStyle(difTheme))).setChecked(true);
-    }
-
-    private void initRadioButton(View button, final int codeStyle) {
-        button.setOnClickListener(new View.OnClickListener() {
+    private void initButtonTheme() {
+        Button buttonTheme = findViewById(R.id.button9);
+        buttonTheme.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                setAppTheme(codeStyle);
-                recreate();
+                Intent runActivity;
+                runActivity = new Intent(MainActivity.this, MainActivity2.class);
+                startActivity(runActivity);
             }
         });
     }
-
-    private int getCodeStyle(int codeStyle) {
-        SharedPreferences sharedPref = getSharedPreferences(NameSharedPreference, MODE_PRIVATE);
-        return sharedPref.getInt(appTheme, codeStyle);
-    }
-
-    private int getTheme(int codeStyle) {
-        return Style(getCodeStyle(codeStyle));
-    }
-
-    private void setAppTheme(int codeStyle) {
-        SharedPreferences sharedPref = getSharedPreferences(NameSharedPreference, MODE_PRIVATE);
-        SharedPreferences.Editor editor = sharedPref.edit();
-        editor.putInt(appTheme, codeStyle);
-        editor.apply();
-    }
-
-    private int Style(int codeStyle) {
-        switch (codeStyle) {
-            case MyCoolButton:
-                return MyCoolButtons;
-            default:
-                return Theme_MyNewApplication;
-        }
-    }
-
 
     private void initButton0Click() {
         Button button_0 = findViewById(R.id.button_0);

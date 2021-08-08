@@ -275,6 +275,7 @@ public class MainActivity extends AppCompatActivity {
     private void otherButtons() {
         Button clear = findViewById(R.id.button_clear);
         Button percent = findViewById(R.id.button_percent);
+        Button delete = findViewById(R.id.button_delete);
         clear.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -285,6 +286,16 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 TextView.setText("Я пока не умею вычислять %%");
+            }
+        });
+        delete.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View v) {
+                String str = TextView.getText().toString().trim();
+                if(str.length()!=0){ str = str.substring( 0, str.length() - 1 );
+                TextView.setText ( str ); }
+
             }
         });
 
